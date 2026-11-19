@@ -1,6 +1,6 @@
 # Simplex em R
 
-Trabalho prático de **DCC035 - Pesquisa Operacional (2026.1)**: implementação do método Simplex (duas fases) para resolver Programas Lineares gerais, com impressão do passo a passo no console.
+Trabalho prático de **DCC035 - Pesquisa Operacional**: implementação do método Simplex (duas fases) para resolver Programas Lineares gerais, com impressão do passo a passo no console.
 
 O programa lê uma PL de um arquivo texto, converte para a Forma Padrão de Igualdade (FPI), encontra uma base viável (PL auxiliar, quando necessário), roda o Simplex e informa se o problema é **inviável**, **ilimitado**, **ótimo** ou **ótimo com múltiplas soluções**. As operações de pivoteamento foram implementadas manualmente.
 
