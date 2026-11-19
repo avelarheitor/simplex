@@ -171,7 +171,7 @@ Rscript meusimplex.R instancias/01 > saidas/01.txt
 Rodas todos os exemplos e salva todas as saídas de uma só vez:
 
 ```
-for f in instancias/*; do Rscript meusimplex.R $f --policy bland > saidas/$(basename $f).txt 2>&1; done
+for %f in (instancias\*) do Rscript meusimplex.R "%f" --policy bland > "saidas\%~nxf.txt" 2>&1
 ```
 
 Ver os resultados de todas as saídas sem abrir uma por uma, mostrando a linha de status de cada uma:
