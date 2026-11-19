@@ -162,22 +162,10 @@ Rodar com os valores padrão:
 Rscript meusimplex.R instancias/01
 ```
 
-Mostrar só o resultado final (Linux, macOS ou Git Bash):
-
-```
-Rscript meusimplex.R instancias/01 | tail -n 6
-```
-
 Salvar a saída completa em um arquivo:
 
 ```
 Rscript meusimplex.R instancias/01 > saidas/01.txt
-```
-
-Rodar todos os exemplos, mostrando só o final de cada um (Linux, macOS ou Git Bash):
-
-```
-for f in instancias/*; do echo "== $f"; Rscript meusimplex.R $f --policy bland | tail -n 6; done
 ```
 
 Rodas todos os exemplos e salva todas as saídas de uma só vez:
