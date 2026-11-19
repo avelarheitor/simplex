@@ -2,7 +2,7 @@
 
 Trabalho prático de **DCC035 - Pesquisa Operacional**: implementação do método Simplex (duas fases) para resolver Programas Lineares gerais, com impressão do passo a passo no console.
 
-O programa lê uma PL de um arquivo texto, converte para a Forma Padrão de Igualdade (FPI), encontra uma base viável (PL auxiliar, quando necessário), roda o Simplex e informa se o problema é **inviável**, **ilimitado**, **ótimo** ou **ótimo com múltiplas soluções**. As operações de pivoteamento foram implementadas manualmente.
+O programa lê uma PL de um arquivo texto, converte para a Forma Padrão de Igualdade (FPI), encontra uma base viável (PL auxiliar, quando necessário), roda o Simplex e informa se o problema é **inviável**, **ilimitado**, **ótimo** ou **ótimo com múltiplas soluções**. As operações de pivoteamento foram implementadas sem uso de funções prontas.
 
 ## Requisitos
 
@@ -84,7 +84,7 @@ Durante todo o processo, o `saida.R` imprime o tableau e o pivô de cada iteraç
 | `fpi.R` | `para_fpi()`, `recuperar_primal()`, `dual_original()` | Converte para a FPI: variáveis não positivas viram `x = -x'`, livres viram `x = x+ - x-`, desigualdades ganham folga (`<=`) ou excesso (`>=`), e linhas com `b < 0` são multiplicadas por -1. Guarda de onde veio cada coluna (para voltar às variáveis originais) e quais linhas foram invertidas (para corrigir o sinal do dual). |
 | `posto_completo.R` | `remover_dependentes()` | Elimina restrições linearmente dependentes (eliminação de Gauss linha a linha). Se uma linha for dependente mas com lado direito incompatível, sinaliza que a PL é inviável. |
 | `tableau.R` | `montar_tableau()`, `valor_objetivo()`, `dual_tableau()`, `solucao_basica()` | Monta o tableau estendido e lê resultados dele: valor da função objetivo, vetor dual e solução básica atual. |
-| `pivoteamento.R` | `canonizar_objetivo()`, `pivotear()` | `pivotear()` é a operação de pivô, feita à mão. `canonizar_objetivo()` zera a linha do objetivo nas colunas básicas (necessário quando a base inicial tem custo, como na PL auxiliar). |
+| `pivoteamento.R` | `canonizar_objetivo()`, `pivotear()` | `pivotear()` é a operação de pivô, sem nenhum tipo de função pronta. `canonizar_objetivo()` zera a linha do objetivo nas colunas básicas (necessário quando a base inicial tem custo, como na PL auxiliar). |
 | `politicas.R` | `custos_reduzidos()`, `escolher_entrada()`, `escolher_saida()` | Decide qual variável entra (regras `largest`, `smallest`, `bland`) e qual sai (teste da razão mínima, com desempate de Bland). Devolve `NULL` quando o tableau é ótimo (nenhuma entrada) ou o problema é ilimitado (nenhuma saída). |
 | `simplex.R` | `simplex()`, `segunda_solucao()` | `simplex()` é o laço principal (entra, sai, pivoteia, imprime) e devolve `"otimo"` ou `"ilimitado"`. `segunda_solucao()` testa variáveis não básicas com custo reduzido zero para achar outra solução ótima distinta. |
 | `auxiliar.R` | `base_obvia()`, `encontrar_base_viavel()` | `base_obvia()` procura colunas da identidade em `A`. `encontrar_base_viavel()` usa essa base se ela for completa; senão monta a PL auxiliar com variáveis artificiais, resolve, decide a viabilidade, expulsa artificiais que sobrarem na base e devolve o tableau da fase 2. |
