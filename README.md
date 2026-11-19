@@ -1,4 +1,4 @@
-<img width="964" height="540" alt="image" src="https://github.com/user-attachments/assets/71fe01ed-e196-49c7-b943-df9c76b8b037" /># Simplex em R
+Simplex em R
 
 Trabalho prático de **DCC035 - Pesquisa Operacional**: implementação do método Simplex (duas fases) para resolver Programas Lineares gerais, com impressão do passo a passo no console.
 
