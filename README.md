@@ -177,7 +177,7 @@ for %f in (instancias\*) do Rscript meusimplex.R "%f" --policy bland > "saidas\%
 Ver os resultados de todas as saídas sem abrir uma por uma, mostrando a linha de status de cada uma:
 
 ```
-grep -H "Status" saidas/*.txt
+findstr /H /C:"Status" saidas\*.txt
 ```
 
 ### Usando pelo console do R
