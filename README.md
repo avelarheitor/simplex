@@ -1,4 +1,4 @@
-# Simplex em R
+<img width="964" height="540" alt="image" src="https://github.com/user-attachments/assets/71fe01ed-e196-49c7-b943-df9c76b8b037" /># Simplex em R
 
 Trabalho prático de **DCC035 - Pesquisa Operacional**: implementação do método Simplex (duas fases) para resolver Programas Lineares gerais, com impressão do passo a passo no console.
 
@@ -178,6 +178,18 @@ Rodar todos os exemplos, mostrando só o final de cada um (Linux, macOS ou Git B
 
 ```
 for f in instancias/*; do echo "== $f"; Rscript meusimplex.R $f --policy bland | tail -n 6; done
+```
+
+Rodas todos os exemplos e salva todas as saídas de uma só vez:
+
+```
+for f in instancias/*; do Rscript meusimplex.R $f --policy bland > saidas/$(basename $f).txt 2>&1; done
+```
+
+Ver os resultados de todas as saídas sem abrir uma por uma, mostrando a linha de status de cada uma:
+
+```
+grep -H "Status" saidas/*.txt
 ```
 
 ### Usando pelo console do R
