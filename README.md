@@ -162,6 +162,12 @@ Rodar com os valores padrão:
 Rscript meusimplex.R instancias/01
 ```
 
+Roda todas os exemplos presentes em instancias e imprime diretamente no terminal:
+
+```
+for %f in (instancias\*) do @echo === %f === & Rscript meusimplex.R "%f" --policy bland
+```
+
 Salvar a saída completa em um arquivo:
 
 ```
