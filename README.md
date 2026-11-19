@@ -263,8 +263,6 @@ w1 w2 w3 ...
 
 ## Resultados esperados nos exemplos
 
-Valores de referência calculados com um solver independente (`linprog` do SciPy), para conferência de `Status` e `Objetivo`:
-
 | Status | Exemplos (objetivo, quando ótimo) |
 |---|---|
 | Ótimo | `01` (14), `04` (50), `04b` (50), `08` (11), `09` (14), `10` (0), `11` (12), `12` (94.2), `18` (36), `19` (3.9928), `20` (11.0199), `25` (1.8) |
